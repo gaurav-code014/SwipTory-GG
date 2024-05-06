@@ -1,0 +1,133 @@
+.register-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.register-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    width: 624px;
+    height: 482px;
+    box-shadow: 0px 4px 30px 0px rgba(255, 255, 255, 0.4);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 32.55px;
+    text-align: center;
+    color: #000000;
+    width: 300px;
+    height: 33px;
+    margin-bottom: 50px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: flex-start; 
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 10px; 
+    width: auto; 
+}
+.submitButton {
+    padding: 10px;
+    background-color: #73ABFF;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100px;
+    height: auto;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.submitButton:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15.62px;
+    text-align: center;
+    color: #FF0E0E;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+input[type="text"], input[type="password"] {
+    flex-grow: 1; 
+}
+
+
+@media (max-width: 768px) {
+    .login-form, .register-form {
+        width: 90%;
+        height: auto; 
+        padding: 20px;
+        border-radius: 10px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .input-container {
+        display: flex;
+        flex-direction: column; 
+        align-items: flex-start; 
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        text-align: left;
+        margin-bottom: 5px; 
+        width: 100%; 
+    }
+
+    input[type="text"], input[type="password"] {
+        width: 100%;
+        height: 40px;
+    }
+
+    .submitButton {
+        width: 100%;
+        height: auto;
+    }
+}

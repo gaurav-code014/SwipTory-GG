@@ -1,0 +1,422 @@
+.carousel-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; 
+    box-sizing: border-box;
+    background-color: rgba(26,26,26,255);
+    backdrop-filter: blur(10px); 
+    width: 100%; 
+    height: 100%; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; 
+}
+.carousel-container {
+    position: relative; 
+    width: 30%; 
+    height: 90%; 
+    background-color: #ffffff; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    overflow: hidden;
+    margin: 0 auto; 
+    border-radius: 5px; 
+    box-shadow: 0 4px 6px rgb(141, 138, 138), 0 1px 3px rgba(0, 0, 0, 0.221); 
+    z-index: 1001; 
+    box-sizing: border-box; 
+}
+
+.progress-bar-container {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000; 
+    padding: 0 10px; 
+    z-index: 5000;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 10px;
+    background-color: #D9D9D980; 
+    transition: width 5s linear;
+}
+
+.progress-bar:nth-child(odd) {
+    background-color: #aff;
+}
+
+.carousel-slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    top: 0;
+    left: 0;
+    filter: brightness(70%);
+}
+
+.carousel-slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 50%, rgb(1, 1, 1) 100%);
+    opacity: 1; 
+    z-index: 2;
+    filter: blur(10px); 
+}
+
+.carousel-slide-text {
+    font-family: 'DM Sans', sans-serif;
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    right: 0;
+    z-index: 3;
+    color: #FFFFFF;
+    padding: 20px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: first baseline;
+    text-align: left;
+}
+
+
+.carousel-slide-text h3, .carousel-slide-text p {
+    margin: 0;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.carousel-slide-text button {
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1002;
+    width: 50px; 
+    height: 50px; 
+}
+
+.carousel-arrow.left {
+    position: absolute;
+    width: 59.27px;
+    height: 59.27px;
+    top: 377px; 
+    left: 302.27px; 
+    padding: 2.96px 11.85px 2.96px 16.6px;
+    gap: 0px;
+    opacity: 1; 
+    z-index: 1002;
+}
+
+.carousel-arrow.right {
+    position: absolute;
+    width: 59.27px;
+    height: 59.27px;
+    top: 377px; 
+    left: 977.77px; 
+    padding: 2.96px 11.85px 2.96px 16.6px;
+    gap: 0px;
+    opacity: 1; 
+    z-index: 1002;
+}
+
+.carousel-arrow.left:hover {
+    background-color: transparent; 
+}
+
+
+.carousel-arrow.right:hover {
+    background-color: transparent; 
+
+}
+
+.carousel-close {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    background: white;
+    border: none;
+    cursor: pointer;
+    z-index: 1002;
+    padding: 5px 10px;
+}
+.carousel-close:hover
+{
+    background: white;
+}
+
+.carousel-button {
+    position: absolute;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1002;
+}
+
+.carousel-slide-text .like-container {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center; 
+    margin-bottom: 10px; 
+    width: 100%; 
+}
+
+.like-container img{
+    width: 25px;
+    height: 22px;
+}
+
+.carousel-slide-text .like-container .carousel-button.like {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px; 
+}
+
+.carousel-slide-text .like-container span {
+    font-size: 13px;
+}
+
+
+
+.bookmark-container img{
+    width: 22px;
+    height: 25px;
+}
+
+.carousel-slide-text .bookmark-container {
+    position: absolute;
+    bottom: 40px;
+    left: 10px; 
+    width: 19.18px;
+    height: 24.51px;
+}
+
+.carousel-slide-text .bookmark-container .carousel-button.bookmark {
+    width: 19.18px;
+    height: 24.51px;
+}
+
+.carousel-button.share {
+    width: 18.32px;
+    height: 18.32px;
+    top: 25px;
+    right: 30px;
+}
+
+.carousel-button.share:hover
+{
+    background: none;
+}
+
+
+
+.progress-container {
+    position: absolute;
+    top: 10px; 
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black; 
+    z-index: 5000;
+    padding: 0 10px; 
+}
+   .progress {
+    height: 5px;
+    flex-grow: 1;
+    margin: 0 5px;
+    display: flex;
+    background-image: -webkit-linear-gradient(left, 
+       rgba(255,255,255,.5) 0%,
+       rgba(255,255,255,.5) 50%,
+       rgba(88, 89, 104,.5) 50.001%,
+       rgba(88, 89, 104,.5) 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 200%;
+    background-color: #666;
+    background-position: 100% 50%;
+    animation-timing-function: linear;
+    animation-delay: .2s;
+   }
+   
+   .progress.active {
+       animation-name: Loader;
+   }
+   
+   .progress.passed {
+       background-position: 0 0; 
+   }
+   
+   @-webkit-keyframes Loader {
+     0%   { background-position: 100% 0; }
+     100% { background-position: 0 0; }
+   }
+   
+   .pause:hover .progress {
+    animation-play-state: paused;
+   }
+   
+   .pause .not-hovered {
+    display: block;
+   }
+   .pause .hovered {
+    display: none;
+   }
+   
+   .pause:hover .not-hovered {
+    display: none;
+   }
+   .pause:hover .hovered {
+    display: block;
+   }
+
+   @media (max-width: 768px) {
+
+    .carousel-wrapper
+    {
+        padding: 0px;
+    }
+    .carousel-container {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column; 
+        justify-content: flex-start; 
+        align-items: stretch; 
+    }
+
+    .progress-container {
+        position: absolute;
+        top: 10px; 
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black; 
+        z-index: 5000;
+        padding: 0 10px; 
+        width: 100%; 
+    }
+
+    .carousel-slide {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .carousel-arrow {
+        display: none; 
+    }
+
+    .carousel-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .carousel-slide-text {
+        position: absolute;
+        bottom: 50px; 
+        left: 0;
+        right: 0;
+        z-index: 3;
+        color: #FFFFFF;
+        padding: 0 20px; 
+    }
+
+    .carousel-slide-text h3, .carousel-slide-text p {
+        margin: 0;
+    }
+
+    .carousel-slide-text button {
+        position: absolute;
+        background: none;
+        border: none;
+        color: #FFFFFF;
+        cursor: pointer;
+        z-index: 1002;
+    }
+
+    .bookmark-container img{
+        width: 22px;
+        height: 25px;
+    }
+
+    .like-container img{
+        width: 25px;
+        height: 22px;
+    }
+    
+
+    .carousel-slide-text .bookmark-container {
+        position: absolute;
+        bottom: -20px; 
+        left: 10px; 
+        width: 19.18px;
+        height: 24.51px;
+        z-index: 1003; 
+    }
+
+    .carousel-slide-text .like-container {
+        position: absolute;
+        bottom: -45px; 
+        right: 20px; 
+        display: flex;
+        justify-content: flex-end; 
+        align-items: center; 
+        width: 100%; 
+        
+    }
+
+    
+    .carousel-close {
+        position: absolute;
+        top: 25px;
+        left: 20px;
+        background: white;
+        border: none;
+        cursor: pointer;
+        z-index: 1002;
+        padding: 5px 10px; 
+    }
+
+    .carousel-button.share {
+        top: 20px;
+        right: 30px;
+    }
+}
