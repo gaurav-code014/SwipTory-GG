@@ -17,7 +17,7 @@ const Bookmark = () => {
     const fetchBookmarkedStories = async () => {
       if (user && user._id) { 
         try {
-          const response = await axios.get(`${api}/stories/bookmarked`, {
+          const response = await axios.get(`${API_BASE_URL}/stories/bookmarked`, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
           });
           setBookmarkedStories(response.data.stories);
