@@ -1,2 +1,3 @@
 Backend/node_modules/
 Frontend/vite-project/node_modules/
+.vercel
