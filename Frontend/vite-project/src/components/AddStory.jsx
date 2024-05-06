@@ -134,7 +134,7 @@ const AddStory = () => {
             className="cancel-button"
             style={{
               position: "absolute",
-              top: "20px",
+              top: "10px",
               right: "20px",
               background: "none",
               border: "none",
