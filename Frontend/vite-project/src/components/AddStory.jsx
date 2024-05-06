@@ -5,6 +5,7 @@ import axios from "axios";
 import "../css/AddEditStory.css"; 
 import Navbar from "./Navbar";
 import cancelIcon from "../images/cancel.png"; 
+import { API_BASE_URL } from "../config";
 
 
 const AddStory = () => {
@@ -101,7 +102,7 @@ const AddStory = () => {
    
     try {
        const response = await axios.post(
-         "http://localhost:3000/api/stories",
+         `${API_BASE_URL}/stories`,
          {
            slides,
            createdBy: user._id,

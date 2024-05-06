@@ -3,6 +3,7 @@ import axios from "axios";
 import { useAuth } from '../contexts/AuthContext'; 
 import { useNavigate } from "react-router-dom"; 
 import editButtonImage from "../images/EditButton.png"; 
+import { API_BASE_URL } from "../config";
 
 import "../css/StoryHome.css"; 
 import Navbar from "./Navbar";
@@ -16,7 +17,7 @@ const Bookmark = () => {
     const fetchBookmarkedStories = async () => {
       if (user && user._id) { 
         try {
-          const response = await axios.get('http://localhost:3000/api/stories/bookmarked', {
+          const response = await axios.get(`${api}/stories/bookmarked`, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
           });
           setBookmarkedStories(response.data.stories);

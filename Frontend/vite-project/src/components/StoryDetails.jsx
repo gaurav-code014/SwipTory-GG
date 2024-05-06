@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import StoryCarousel from "./StoryCarousel"; 
 import axios from "axios"; 
 import "../css/StoryDetails.css";
+import { API_BASE_URL } from "../config";
 
 const StoryDetails = () => {
   const { id } = useParams();
@@ -14,7 +15,7 @@ const StoryDetails = () => {
     const fetchStory = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/stories/${id}`
+          `${API_BASE_URL}/stories/${id}`
         );
         setStory(response.data.story);
         setIsLoading(false); 

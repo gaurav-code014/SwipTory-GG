@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import "../css/StoryHome.css"; 
 import Navbar from "./Navbar";
-
+import { API_BASE_URL } from "../config";
 
 const YourStory = () => {
     const { user } = useAuth(); 
@@ -14,7 +14,7 @@ const YourStory = () => {
        const fetchUserStories = async () => {
          if (user && user._id) { 
            try {
-             const response = await axios.get(`http://localhost:3000/api/stories/user/${user._id}`, {
+             const response = await axios.get(`${API_BASE_URL}/stories/user/${user._id}`, {
                headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
              });
              setUserStories(response.data.stories);

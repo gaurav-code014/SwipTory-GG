@@ -12,6 +12,7 @@ import { useAuth } from "../contexts/AuthContext";
 import { useLoginPopup } from '../contexts/LoginPopupContext'; 
 import { toast } from 'react-hot-toast'; 
 import axios from "axios";
+import { API_BASE_URL } from "../config";
 
 import "../css/StoryCarousel.css"; 
 
@@ -40,7 +41,7 @@ const StoryCarousel = ({ initialStory  }) => {
       const checkIfStoryIsBookmarked = async () => {
         try {
           const response = await axios.get(
-            "http://localhost:3000/api/stories/bookmarked",
+            `${API_BASE_URL}/stories/bookmarked`,
             {
               headers: { Authorization: `Bearer ${token}` },
             }
@@ -115,7 +116,7 @@ const StoryCarousel = ({ initialStory  }) => {
    
     try {
        const response = await axios.post(
-         `http://localhost:3000/api/stories/bookmark/${story._id}`,
+         `${API_BASE_URL}/stories/bookmark/${story._id}`,
          {},
          {
            headers: { Authorization: `Bearer ${token}` },
@@ -145,7 +146,7 @@ const StoryCarousel = ({ initialStory  }) => {
 
     try {
       const response = await axios.post(
-        `http://localhost:3000/api/stories/like/${story._id}`,
+        `${API_BASE_URL}/stories/like/${story._id}`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },

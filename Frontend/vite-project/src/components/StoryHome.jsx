@@ -7,10 +7,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 import Login from "./Login";
 import Register from "./Register";
 import Navbar from "./Navbar";
-
 import "../css/StoryHome.css"; 
-
-
+import { API_BASE_URL } from "../config";
 import allImage from "../images/all.jpg";
 import foodImage from "../images/food.jpg";
 import fitnessImg from "../images/fitness.jpg";
@@ -56,7 +54,7 @@ const StoryHome = () => {
         
         try {
           const response = await axios.get(
-            `http://localhost:3000/api/stories/user/${user._id}`
+            `${API_BASE_URL}/stories/user/${user._id}`
           );
           setUserStories(response.data.stories);
           console.log(response.data);
@@ -86,7 +84,7 @@ const StoryHome = () => {
 
         try {
           const response = await axios.get(
-            `http://localhost:3000/api/stories/filter?category=${category}`
+            `${API_BASE_URL}/stories/filter?category=${category}`
           );
           stories[category] = response.data.stories || [];
         } catch (error) {
@@ -114,7 +112,7 @@ const StoryHome = () => {
         })); 
         try {
           const response = await axios.get(
-            `http://localhost:3000/api/stories/filter?category=${selectedCategory}`
+            `${API_BASE_URL}/stories/filter?category=${selectedCategory}`
           );
 
           setStoriesByCategory({

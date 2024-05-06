@@ -5,6 +5,7 @@ import axios from 'axios';
 import '../css/AddEditStory.css'; 
 import Navbar from './Navbar';
 import cancelIcon from "../images/cancel.png"; 
+import { API_BASE_URL } from '../config';
 
 const EditStory = () => {
  const { user } = useAuth();
@@ -30,7 +31,7 @@ const EditStory = () => {
  useEffect(() => {
     const fetchStoryDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/stories/${id}`, {
+        const response = await axios.get(`${API_BASE_URL}/stories/${id}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`,
           },
@@ -117,7 +118,7 @@ const EditStory = () => {
 
     
     try {
-      const response = await axios.put(`http://localhost:3000/api/stories/${id}`, {
+      const response = await axios.put(`${API_BASE_URL}/stories/${id}`, {
         slides,
       }, {
         headers: {
