@@ -129,6 +129,7 @@ const AddStory = () => {
        <Navbar />
        <div className="wrapper">
          <div className="add-story-container">
+         <div className="add-story-to-feed">Add story to feed</div>
          <button
             onClick={handleCancelClick}
             className="cancel-button"
@@ -176,7 +177,7 @@ const AddStory = () => {
            </div>
            <div className="content-container">
            {slides.map((slide, index) => (
-             <div key={index} style={{ display: index === activeSlide ? "block" : "none" }}>
+             <div key={index} style={{ display: index === activeSlide ? "block" : "none" }} className="content1">
                <div className="input-group">
                  <label className="label">Heading</label>
                  <input

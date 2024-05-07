@@ -6,6 +6,40 @@
     align-items: center;
 }
 
+.loader {
+    width: 50px;
+    aspect-ratio: 1;
+    --_c: no-repeat radial-gradient(farthest-side, #25b09b 92%, #0000);
+    background: 
+       var(--_c) top,
+       var(--_c) left,
+       var(--_c) right,
+       var(--_c) bottom;
+    background-size: 12px 12px;
+    animation: l7 1s infinite;
+   }
+   
+   @keyframes l7 {
+    to {
+       transform: rotate(.5turn);
+    }
+   }
+
+
+   .loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255); 
+    z-index: 1005; 
+}
+
+
 .add-story-container {
     position: relative;
     top: 0px;
@@ -179,8 +213,8 @@ select {
 
 .slide-limit-text {
     position: absolute;
-    top: 10px; 
-    left: 550px; 
+    top: 15px; 
+    left: 500px; 
     width: 100px;
     height: 13px;
     font-family: 'DM Sans', sans-serif;
@@ -201,15 +235,32 @@ select {
 
 }
 
+.add-story-to-feed 
+{
+    display: none;
+}
+
 @media (max-width: 768px) {
+
+    .content1
+    {
+        width: 400px;
+    }
+
+    .wrapper {
+        min-width: 100%;
+    }
+    
     .add-story-container {
+        overflow: hidden; 
         width: 90%; 
         max-width: 100%; 
         padding: 10px; 
         display: flex; 
         flex-direction: row;
         margin-top: 10px;
-        height: 500px;
+        height: auto;
+        min-height: 600px;
     }
 
     .slide-selector {
@@ -217,6 +268,7 @@ select {
         flex-direction: column; 
         width: 30%; 
         margin-right: 10px; 
+        margin-top: 50px;
     }
 
     .slide-limit-text {
@@ -267,13 +319,14 @@ select {
         width: 100%; 
         margin-bottom: 10px; 
         position: absolute;
-        top: 450px;
+        top: 500px;
         left: 120px;
         width: 100px;
     }
 
     .content-container {
-        width: 70%; 
+        margin-top: 50px;
+        width: 100%; 
         display: flex;
         flex-direction: column;
         align-items: flex-start; 
@@ -294,4 +347,16 @@ select {
         margin-left: 15px;
 
     }
+
+    .add-story-to-feed {
+        display: block;
+        position: absolute;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 23.44px;
+        text-align: center;
+        left: 30%;
+        top:20px;
+     }
 }

@@ -14,6 +14,7 @@ const EditStory = () => {
  const [slides, setSlides] = useState([]);
  const [activeSlide, setActiveSlide] = useState(0);
  const [validationErrors, setValidationErrors] = useState({});
+ const [isLoading, setIsLoading] = useState(true);
 
  const categories = [
     'food',
@@ -30,6 +31,7 @@ const EditStory = () => {
 
  useEffect(() => {
     const fetchStoryDetails = async () => {
+      setIsLoading(true); 
       try {
         const response = await axios.get(`${API_BASE_URL}/stories/${id}`, {
           headers: {
@@ -39,6 +41,9 @@ const EditStory = () => {
         setSlides(response.data.story.slides);
       } catch (error) {
         console.error('Failed to fetch story details:', error);
+      }
+      finally {
+        setIsLoading(false); 
       }
     };
 
@@ -136,6 +141,11 @@ const EditStory = () => {
  return (
     <>
       <Navbar />
+      {isLoading && (
+        <div className="loader-container visible">
+          <div className="loader"></div>
+        </div>
+      )}
       <div className="wrapper">
         <div className="add-story-container">
         <button
