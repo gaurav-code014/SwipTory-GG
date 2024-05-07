@@ -9,12 +9,12 @@ import Register from "./Register";
 import Navbar from "./Navbar";
 import "../css/StoryHome.css"; 
 import { API_BASE_URL } from "../config";
-import allImage from "../images/all.jpg";
-import foodImage from "../images/food.jpg";
-import fitnessImg from "../images/fitness.jpg";
-import travelImg from "../images/travel.jpg";
-import movieImg from "../images/movies.jpg";
-import educationImg from "../images/education.jpg";
+import allImage from "/all.jpg";
+import foodImage from "/food.jpg";
+import fitnessImg from "/fitness.jpg";
+import travelImg from "/travel.jpg";
+import movieImg from "/movies.jpg";
+import educationImg from "/education.jpg";
 
 const StoryHome = () => {
   const { user } = useAuth(); 

@@ -2,7 +2,7 @@ import React, { useState,useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext"; 
 import "../css/Navbar.css"; 
-import hamburgerIcon from "../images/hamberger.png"; 
+import hamburgerIcon from "/hamberger.png"; 
 import cancelIcon from "../images/cancel.png"; 
 import BookmarkImg from "../images/Bookmark.jpg";
 import profilePic from "../images/profilePic.png";

@@ -15,9 +15,10 @@
          "dest": "/public/$1"
        },
        {
-         "src": "/(.*)",
-         "dest": "/index.html"
-       }
+        "src": "/[^.]+",
+        "dest": "/",
+        "status": 200
+      }
     ]
    }
    
