@@ -3,7 +3,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext'; 
 import axios from 'axios';
 import '../css/AddEditStory.css'; 
-import Navbar from './Navbar';
 import cancelIcon from "../images/cancel.png"; 
 import { API_BASE_URL } from '../config';
 
@@ -140,7 +139,6 @@ const EditStory = () => {
 
  return (
     <>
-      <Navbar />
       {isLoading && (
         <div className="loader-container visible">
           <div className="loader"></div>
